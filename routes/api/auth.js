@@ -65,7 +65,7 @@ router.post('/register', (req, res) => {
 router.get('/user', (req, res) => {
     var token = req.headers['x-access-token'];
     if (!token)
-        return res.status(401).json({ "error": "No acces token provided" })
+        return res.status(401).json({ "error": "No access token provided" })
     var decrypted
     try {
         decrypted = decryptString(token)
