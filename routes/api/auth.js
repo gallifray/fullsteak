@@ -62,7 +62,7 @@ router.post('/register', (req, res) => {
     })
 });
 
-router.post('/getUser', (req, res) => {
+router.get('/user', (req, res) => {
     var token = req.headers['x-access-token'];
     if (!token)
         return res.status(401).json({ "error": "No acces token provided" })
@@ -75,11 +75,14 @@ router.post('/getUser', (req, res) => {
     jwt.verify(decrypted, process.env.JWT_SECRET, (err, data) => {
         if (err) return res.status(401).json({ "error": "Invalid token" })
         const id = data.id
-        User.findOne({ _id: id }).then(user => {
+        User.findOne({ _id: id }).select(['-password']).then(user => {
             if (!user)
                 return res.status(404).json({ "error": "User not found" })
-            const { email, _id } = user;
-            return res.json({ _id, email })
+            if (!user.canLogin)
+                return res.status(403).json({ "error": "You are not allowed to login" })
+            var clean = JSON.parse(JSON.stringify(user));
+            delete clean['canLogin'];
+            return res.json({ clean });
         })
     })
 
