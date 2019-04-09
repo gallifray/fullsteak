@@ -1,0 +1,8 @@
+{
+    "dbConfig": {
+        "mongoURI": "mongodb://localhost:27017/fysi"
+    },
+    "jwtConfig": {
+        "expiration": "2d"
+    }
+}
