@@ -1,7 +1,7 @@
 {
-  "name": "fysi",
+  "name": "fullsteak",
   "version": "1.0.0",
-  "description": "An app to organize green walks",
+  "description": "An MERN (Mongo, Express, React, NodeJS) app boilerplate",
   "main": "server.js",
   "author": "gallifray",
   "license": "MIT",
