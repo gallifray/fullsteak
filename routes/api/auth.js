@@ -28,7 +28,7 @@ router.post('/login', (req, res) => {
                 return res.status(403).json({ "error": "You are not allowed to login" })
             jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: jwtConfig.expiration }, (err, token) => {
                 if (err) throw err;
-                return res.json({ token: encryptString(token) })
+                return res.json({ user, token: encryptString(token) })
             })
         })
     })

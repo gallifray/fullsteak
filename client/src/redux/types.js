@@ -1,0 +1,9 @@
+export const FETCH_USER = 'FETCH_USER';
+
+export const LOGIN_FETCH = 'LOGIN_FETCH';
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+
+export const REGISTER_FETCH = 'REGISTER_FETCH';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_ERROR = 'REGISTER_ERROR';

@@ -1,0 +1,37 @@
+body
+{
+    background-color: #ededed;
+}
+
+.center {
+    text-align: center;
+}
+
+a, a:hover, a:active {
+    color: #dc7029;
+}
+
+div.HomePage
+{
+    background-color: #1b1c1d;
+    color: #fff
+}
+
+div.Page
+{
+    padding-top: 20px 
+}
+
+div.MainMenu
+{
+    z-index: 99;
+}
+
+div.Page.VerticalAligned
+{
+    height: calc(100vh - 59px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
